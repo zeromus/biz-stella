@@ -97,7 +97,7 @@
     <ClCompile>
       <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\yacc;..\emucore;..\common;..\common\tv_filters;..\gui;..\debugger\gui;..\debugger;..\win32;..\cheat;..\zlib;..\libpng;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\yacc;..\emucore;..\common;..\common\tv_filters;..\gui;..\debugger\gui;..\debugger;..\win32;..\cheat;..\zlib;..\libpng;sdl\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>BSPF_WIN32;WIN32;NDEBUG;JOYSTICK_SUPPORT;DEBUGGER_SUPPORT;THUMB_SUPPORT;DISPLAY_OPENGL;WINDOWED_SUPPORT;SOUND_SUPPORT;CHEATCODE_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -111,7 +111,7 @@
       <AdditionalOptions>SDL.lib
 SDLmain.lib
  %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>sdl.lib;sdlmain.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>advapi32.lib;gdi32.lib;user32.lib;kernel32.lib;sdl.lib;sdlmain.lib;directx-win32-ddraw-dinput8-dsound-dxerr8-dxguid.lib;winmm.lib</AdditionalDependencies>
       <OutputFile>$(OutDir)Stella.exe</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>$(OutDir)Stella.pdb</ProgramDatabaseFile>
@@ -120,6 +120,7 @@ SDLmain.lib
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories>sdl\libs</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -159,7 +160,7 @@ SDLmain.lib
       <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
       <OmitFramePointers>true</OmitFramePointers>
       <WholeProgramOptimization>false</WholeProgramOptimization>
-      <AdditionalIncludeDirectories>..\yacc;..\emucore;..\common;..\common\tv_filters;..\gui;..\debugger\gui;..\debugger;..\win32;..\cheat;..\zlib;..\libpng;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\yacc;..\emucore;..\common;..\common\tv_filters;..\gui;..\debugger\gui;..\debugger;..\win32;..\cheat;..\zlib;..\libpng;sdl\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>BSPF_WIN32;WIN32;NDEBUG;JOYSTICK_SUPPORT;DEBUGGER_SUPPORT;THUMB_SUPPORT;DISPLAY_OPENGL;WINDOWED_SUPPORT;SOUND_SUPPORT;CHEATCODE_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
@@ -172,7 +173,7 @@ SDLmain.lib
       <AdditionalOptions>SDL.lib
 SDLmain.lib
  %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>sdl.lib;sdlmain.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>advapi32.lib;gdi32.lib;user32.lib;kernel32.lib;sdl.lib;sdlmain.lib;directx-win32-ddraw-dinput8-dsound-dxerr8-dxguid.lib;winmm.lib</AdditionalDependencies>
       <OutputFile>$(OutDir)Stella.exe</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
@@ -182,6 +183,7 @@ SDLmain.lib
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories>sdl\libs</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
